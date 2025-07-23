@@ -1,0 +1,12 @@
+# type,brand,category,transmission,fuel,feature,minPrice,maxPrice,search,expectedResult
+filter,Toyota,,,,,,,,1
+filter,Toyota,4-seat car,,,,,,,1
+filter,Toyota,4-seat car,Automatic Transmission,,,,,,0
+filter,Toyota,4-seat car,Automatic Transmission,Gasoline,,,,,0
+filter,Toyota,4-seat car,Automatic Transmission,Gasoline,Map,,,,0
+filter,,,,,,60,200,,1
+filter,,,,,,50,210,,0
+filter,,,,,,abc,xyz,,1
+search,,,,,,,,Kia,1
+search,,,,,,,,123,0
+search,,,,,,,,@#!,0
