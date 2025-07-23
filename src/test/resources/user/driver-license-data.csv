@@ -1,0 +1,12 @@
+licenseNumber,fullName,dob,filePath,expectedResult
+123456789012,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,success
+12345678901,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,fail         # licenseNumber thiếu số
+1234567890123,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,fail        # licenseNumber thừa số
+12345678901A,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,fail         # licenseNumber có chữ
+12345678901!,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,fail         # licenseNumber có ký tự đặc biệt
+,Nguyen Van A,01/01/2000,D:/My_shit/ava.jpg,fail                     # licenseNumber để trống
+
+123456789012,Nguyen Van 1,01/01/2000,D:/My_shit/ava.jpg,fail         # fullName có số
+123456789012,Nguyen Van @,01/01/2000,D:/My_shit/ava.jpg,fail         # fullName có ký tự đặc biệt
+123456789012,,01/01/2000,D:/My_shit/ava.jpg,fail                     # fullName để trống
+123456789012,Nguyễn Văn Ánh,01/01/2000,D:/My_shit/ava.jpg,success    # fullName có dấu, hợp lệ

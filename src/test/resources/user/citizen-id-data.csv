@@ -1,0 +1,10 @@
+citizenIdNumber,citizenFullName,citizenDob,citizenIssueDate,citizenPlaceOfIssue,citizenIdImagePath,citizenIdBackImagePath,expectedResult
+123456789012,Nguyen Van A,01/01/2000,01/01/2020,Hanoi,D:/My_shit/1.jpg,D:/My_shit/2.jpg,success
+12345678901,Nguyen Van A,01/01/2000,01/01/2020,Hanoi,D:/My_shit/3.jpg,D:/My_shit/4.jpg,fail
+1234567890123,Nguyen Van A,01/01/2000,01/01/2020,Hanoi,D:/My_shit/5.jpg,D:/My_shit/6.jpg,fail
+12345678901A,Nguyen Van A,01/01/2000,01/01/2020,Hanoi,D:/My_shit/7.jpg,D:/My_shit/8.jpg,fail
+,Nguyen Van A,01/01/2000,01/01/2020,Hanoi,D:/My_shit/9.jpg,D:/My_shit/10.jpg,fail
+123456789012,Nguyen Van 1,01/01/2000,01/01/2020,Hanoi,D:/My_shit/11.jpg,D:/My_shit/12.jpg,fail
+123456789012,Nguyen Van @,01/01/2000,01/01/2020,Hanoi,D:/My_shit/14.jpg,D:/My_shit/ava.jpg,fail
+123456789012,,01/01/2000,01/01/2020,Hanoi,D:/My_shit/wallpp.jpg,D:/My_shit/1.jpg,fail
+123456789012,Nguyễn Văn Ánh,01/01/2000,01/01/2020,Hanoi,D:/My_shit/2.jpg,D:/My_shit/3.jpg,success
