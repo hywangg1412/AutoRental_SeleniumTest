@@ -1,9 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,9 +22,32 @@ public class BasePage {
 
     // Click safely
     protected void click(By locator) {
-        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(locator)).click();
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+        try {
+            element.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        }
     }
-
+    public void clickCheckboxJS(By locator) {
+        WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block: 'center'});", checkbox);
+        // Click thực tế để trigger mọi sự kiện
+        try {
+            checkbox.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript(
+                    "if(!arguments[0].checked){arguments[0].checked=true; arguments[0].dispatchEvent(new Event('change', {bubbles:true}));}", checkbox);
+        }
+    }
+    public void assertCheckboxChecked(By locator) {
+        WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        if (!checkbox.isSelected()) {
+            throw new AssertionError("Checkbox chưa được tick thành công!");
+        }
+    }
     // Send keys safely
     protected void type(By locator, String text) {
         WebElement element = waitForVisibility(locator);
